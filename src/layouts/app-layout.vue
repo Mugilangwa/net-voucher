@@ -37,8 +37,31 @@
 </template>
 
 <script setup>
+
+    import { onMounted } from 'vue';
     import Header from '@/components/layout/header.vue';
     import Sidebar from '@/components/layout/sidebar.vue';
     import Footer from '@/components/layout/footer.vue';
     import appSettings from '@/components/app-settings.vue';
+    import { useRouter } from 'vue-router';
+    import auth from '@/store/auth';
+    
+    const router = useRouter();
+    
+
+    onMounted(
+    ()=> {
+        console.log('IS USER ELLIGIBLE ',auth.state.isAuthenticated);
+
+    if (!auth.state.isAuthenticated)
+      {
+       router.push('/');        
+      }
+
+        }
+        )
+
+
+
+
 </script>

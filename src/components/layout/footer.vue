@@ -2,11 +2,11 @@
     <!-- BEGIN FOOTER -->
     <div class="footer-wrapper">
         <div class="footer-section f-section-1">
-            <p class="">Copyright © 2021 <a target="_blank" href="https://arrangic.com">Arrangic Solutions LLP</a>, All rights reserved.</p>
+            <p class="">Copyright © 2026 <a target="_blank" href="https://arrangic.com">Huvika </a>, All rights reserved.</p>
         </div>
         <div class="footer-section f-section-2">
             <p class="">
-                Coded with
+                Walk with Jesus
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

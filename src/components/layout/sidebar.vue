@@ -7,7 +7,7 @@
             <perfect-scrollbar class="list-unstyled menu-categories" tag="ul" :options="{ wheelSpeed: 0.5, swipeEasing: !0, minScrollbarLength: 40, maxScrollbarLength: 300, suppressScrollX: true }">
     
                 <li class="menu">
-                    <router-link to="/" class="dropdown-toggle" @click="toggleMobileMenu">
+                    <router-link to="/home" class="dropdown-toggle" @click="toggleMobileMenu">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -16,89 +16,56 @@
                             <span>{{ $t('Home') }}</span>
                         </div>
                     </router-link>
-                </li>
-                <li class="menu">
-                    <a class="dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#dashboard" aria-controls="dashboard" aria-expanded="false">
+                </li> 
+                   <li class="menu">
+                    <router-link to="/parishi" class="dropdown-toggle" @click="toggleMobileMenu">
                         <div class="">
-                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-     viewBox="0 0 24 24" fill="none" stroke="currentColor"
-     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-     class="feather feather-users">
-  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-  <circle cx="9" cy="7" r="4"></circle>
-  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-</svg>
-
-                            <span>{{ $t('Clients') }}</span>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay">
+                                    <path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path>
+                                    <polygon points="12 15 17 21 7 21 12 15"></polygon>
                                 </svg>
+                            <span>{{ $t('Parishi') }}</span>
                         </div>
-                    </a>
-    
-                    <ul id="dashboard" class="collapse submenu list-unstyled" data-bs-parent="#sidebar">
-                        <li>
-                            <router-link to="/clients" @click="toggleMobileMenu">
-                                {{ $t('Hotsport Clients') }}
-                            </router-link>
-                        </li>
-    
-                    </ul>
+                    </router-link>
                 </li>
-                <li class="menu">
-                    <a class="dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#dashboard" aria-controls="dashboard" aria-expanded="false">
+                 <li class="menu">
+                    <router-link to="/activities" class="dropdown-toggle" @click="toggleMobileMenu">
                         <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-     viewBox="0 0 24 24" fill="none" stroke="currentColor"
-     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-     class="feather feather-globe">
-  <circle cx="12" cy="12" r="10"></circle>
-  <line x1="2" y1="12" x2="22" y2="12"></line>
-  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-</svg>
-
-                            <span>{{ $t('Internet Plans') }}</span>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                        </div>
-                    </a>
-    
-                    <ul id="dashboard" class="collapse submenu list-unstyled" data-bs-parent="#sidebar">
-                        <li>
-                            <router-link to="/" @click="toggleMobileMenu">
-                                {{ $t('Hotspot Plans') }}
-                            </router-link>
-                        </li>
-    
-                    </ul>
-                </li>
-    
-    
-                <li class="menu">
-                    <router-link to="/widgets" class="dropdown-toggle" @click="toggleMobileMenu">
-                        <div class="">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-     viewBox="0 0 24 24" fill="none" stroke="currentColor"
-     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-     class="feather feather-credit-card">
-  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-  <line x1="1" y1="10" x2="23" y2="10"></line>
-</svg>
-
-                            <span>{{ $t('Prepaid Voucher') }}</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <span>{{ $t('Activities') }}</span>
                         </div>
                     </router-link>
                 </li>
                 <li class="menu">
-                    <a class="dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#dashboard" aria-controls="dashboard" aria-expanded="false">
+                    <router-link to="/location-master" class="dropdown-toggle" @click="toggleMobileMenu">
                         <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <span>{{ $t('Location') }}</span>
+                        </div>
+                    </router-link>
+                </li>  
+
+                <li class="menu">
+                    <router-link to="/auth/user-management" class="dropdown-toggle" @click="toggleMobileMenu">
+                        <div class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <span>{{ $t('Users Management') }}</span>
+                        </div>
+                    </router-link>
+                </li>             
+                <li class="menu">
+                    <a class="dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#settings" aria-controls="dashboard" aria-expanded="false">
+                        <div class="">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu">
                                     <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
                                     <rect x="9" y="9" width="6" height="6"></rect>
                                     <line x1="9" y1="1" x2="9" y2="4"></line>
@@ -110,7 +77,7 @@
                                     <line x1="1" y1="9" x2="4" y2="9"></line>
                                     <line x1="1" y1="14" x2="4" y2="14"></line>
                                 </svg>
-                            <span>{{ $t('Networks') }}</span>
+                        <span>{{ $t('Settings') }}</span>
                         </div>
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
@@ -118,103 +85,37 @@
                                 </svg>
                         </div>
                     </a>
-    
-                    <ul id="dashboard" class="collapse submenu list-unstyled" data-bs-parent="#sidebar">
-                        <li>
-                            <router-link to="/index2" @click="toggleMobileMenu">
-                                {{ $t('Routers') }}
-                            </router-link>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu">
-                    <a class="dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#dashboard" aria-controls="dashboard" aria-expanded="false">
-                        <div class="">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-     viewBox="0 0 24 24" fill="none" stroke="currentColor"
-     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-     class="feather feather-settings">
-  <circle cx="12" cy="12" r="3"></circle>
-  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83
-           2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33
-           1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2
-           2 2 0 0 1-2-2v-.09a1.65 1.65 0 0 0-1-1.51
-           1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0
-           2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82
-           1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2
-           2 2 0 0 1 2-2h.09a1.65 1.65 0 0 0 1.51-1
-           1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83
-           2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33
-           1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2
-           2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51
-           1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0
-           2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82
-           1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2
-           2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-</svg>
 
-                            <span>{{ $t('Configuration') }}</span>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                        </div>
-                    </a>
-    
-                    <ul id="dashboard" class="collapse submenu list-unstyled" data-bs-parent="#sidebar">
-                        <li>
-                            <router-link to="/" @click="toggleMobileMenu">
-                                {{ $t('Receiving Accounts') }}
+                   <ul id="settings" class="collapse submenu list-unstyled" data-bs-parent="#sidebar">
+                         
+                         <li>
+                            <router-link to="/settings/dashboard" @click="toggleMobileMenu">
+                                {{ $t('Dashboard') }}
                             </router-link>
                         </li>
                         <li>
-                            <router-link to="/index2" @click="toggleMobileMenu">
-                                {{ $t('Campanies') }}
-                            </router-link>
-                        </li>
-                    </ul>
-                </li>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-                <li class="menu">
-                    <a class="dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#dashboard" aria-controls="dashboard" aria-expanded="false">
-                        <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                                </svg>
-                            <span>{{ $t('dashboard') }}</span>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                        </div>
-                    </a>
-    
-                    <ul id="dashboard" class="collapse submenu list-unstyled" data-bs-parent="#sidebar">
-                        <li>
-                            <router-link to="/" @click="toggleMobileMenu">
-                                {{ $t('sales') }}
+                            <router-link to="/settings/positions" @click="toggleMobileMenu">
+                                {{ $t('Church Positions') }}
                             </router-link>
                         </li>
                         <li>
-                            <router-link to="/index2" @click="toggleMobileMenu">
-                                {{ $t('analytics') }}
+                            <router-link to="/settings/roles" @click="toggleMobileMenu">
+                                {{ $t('Church Roles') }}
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/settings/member-roles" @click="toggleMobileMenu">
+                                {{ $t('Other Roles') }}
                             </router-link>
                         </li>
                     </ul>
                 </li>
-    
-                <li class="menu">
+                
+               
+
+
+
+                 <li class="menu">
                     <a class="dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#dashboard" aria-controls="dashboard" aria-expanded="false">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
@@ -793,7 +694,11 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
+
+
 const store = useStore();
+
+
 
 const menu_collapse = ref('dashboard');
 

@@ -7,6 +7,7 @@
     import { computed } from 'vue';
 
     import '@/assets/sass/app.scss';
+    import '@/assets/sass/elements/breadcrumb.scss';
 
     import { useMeta } from '@/composables/use-meta';
     import { useStore } from 'vuex';

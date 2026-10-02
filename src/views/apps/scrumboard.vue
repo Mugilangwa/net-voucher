@@ -14,7 +14,6 @@
                 </li>
             </ul>
         </teleport>
-
         <div class="action-btn layout-top-spacing mb-5">
             <button type="button" id="add-list" class="btn btn-primary" @click="edit_project()">Add List</button>
         </div>

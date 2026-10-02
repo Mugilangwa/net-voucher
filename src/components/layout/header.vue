@@ -10,8 +10,8 @@
                         </router-link>
                     </li> -->
                     <li class="nav-item theme-text">
-                        <router-link to="/" class="nav-link">
-                            Awath Net
+                        <router-link to="/home" class="nav-link">
+                            Huvika
                         </router-link>
                     </li>
                 </ul>
@@ -434,27 +434,28 @@
                                     Lock Screen
                                 </router-link>
                             </li>
-                            <li role="presentation">
-                                <router-link to="/auth/login" class="dropdown-item">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="feather feather-log-out"
-                                    >
-                                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                        <polyline points="16 17 21 12 16 7"></polyline>
-                                        <line x1="21" y1="12" x2="9" y2="12"></line>
-                                    </svg>
-                                    Sign Out
-                                </router-link>
-                            </li>
+                            <!-- Find this section in your template (around line 260-280) -->
+<li role="presentation">
+    <a href="javascript:;" @click="handleLogout" class="dropdown-item">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-log-out"
+        >
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+        Sign Out
+    </a>
+</li>
                         </ul>
                     </div>
                 </div>
@@ -1080,11 +1081,13 @@
     import { onMounted, ref } from 'vue';
     import { useI18n } from 'vue-i18n';
     import { useStore } from 'vuex';
+    import { useRouter } from 'vue-router';
+    import auth from '@/store/auth'; // Import your auth module
+    
     const store = useStore();
-
+    const router = useRouter();
     const selectedLang = ref(null);
     const countryList = ref(store.state.countryList);
-
     const i18n = useI18n();
 
     onMounted(() => {
@@ -1099,7 +1102,38 @@
     const changeLanguage = (item) => {
         selectedLang.value = item;
         window.$appSetting.toggleLanguage(item);
-
         i18n.locale.value = item.code;
+    };
+
+    // ========== LOGOUT FUNCTION ==========
+    const handleLogout = async () => {
+        // Optional: Show confirmation dialog
+        const confirmLogout = confirm('Are you sure you want to sign out?');
+        if (!confirmLogout) return;
+        
+        try {
+            // Call logout function from auth.js
+            const result = await auth.actions.logout();
+            
+            if (result.success) {
+                // Clear any app-specific data
+                localStorage.removeItem('rememberMe');
+                localStorage.removeItem('savedUsername');
+                
+                // Optional: Clear Vuex store state
+                store.commit('clearUserData'); // If you have this mutation
+                
+                // Redirect to login page
+                router.push('/');
+            } else {
+                console.error('Logout failed:', result.error);
+                // Force redirect anyway
+                router.push('/');
+            }
+        } catch (error) {
+            console.error('Logout error:', error);
+            // Force redirect to login on error
+            router.push('/');
+        }
     };
 </script>

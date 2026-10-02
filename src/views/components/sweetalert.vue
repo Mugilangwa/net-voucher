@@ -689,6 +689,7 @@ toast.fire({
                 text: 'You clicked the!',
                 padding: '2em',
             });
+            
         } else if (type === 3) {
             const ipAPI = 'https://api.ipify.org?format=json';
             new window.Swal({
