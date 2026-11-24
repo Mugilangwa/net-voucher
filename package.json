@@ -29,6 +29,7 @@
         "leaflet": "^1.9.4",
         "maska": "^1.5.0",
         "sweetalert2": "^11.4.17",
+        "swiper": "^14.4.0",
         "v-tables-3": "^0.4.7",
         "vue": "^3.2.13",
         "vue-animation-counter": "^1.0.30",
@@ -37,7 +38,7 @@
         "vue-easy-lightbox": "^1.4.1",
         "vue-easymde": "^2.0.0",
         "vue-flatpickr-component": "^9.0.8",
-        "vue-i18n": "^9.1.10",
+        "vue-i18n": "^9.14.5",
         "vue-router": "^4.0.3",
         "vue3-apexcharts": "^1.4.1",
         "vue3-form-wizard": "^0.0.4",
@@ -56,6 +57,7 @@
         "@vue/cli-plugin-vuex": "~5.0.0-rc.1",
         "@vue/cli-service": "~5.0.0-rc.1",
         "sass": "^1.49.0",
-        "sass-loader": "^12.4.0"
+        "sass-loader": "^12.4.0",
+        "sharp": "^0.35.5"
     }
 }

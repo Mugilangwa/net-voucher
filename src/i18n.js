@@ -1,21 +1,22 @@
 import { createI18n } from 'vue-i18n';
+import sw from '@/locales/sw';
+import en from '@/locales/en';
 
-function loadLocaleMessages() {
-    const locales = require.context('./locales', true, /[A-Za-z0-9-_,\s]+\.json$/i);
-    const messages = {};
-    locales.keys().forEach((key) => {
-        const matched = key.match(/([A-Za-z0-9-_]+)\./i);
-        if (matched && matched.length > 1) {
-            const locale = matched[1];
-            messages[locale] = locales(key);
-        }
-    });
-    return messages;
-}
+// Chukua lugha iliyohifadhiwa au tumia Kiswahili kama default
+const savedLang = localStorage.getItem('lang') || 'sw';
 
-export default createI18n({
-    allowComposition: true,
-    locale: 'en',
-    fallbackLocale: 'en',
-    messages: loadLocaleMessages(),
+// Weka lugha kwenye HTML tag mara moja mwanzo
+document.documentElement.setAttribute('lang', savedLang);
+
+const i18n = createI18n({
+    legacy: false,            // MUHIMU: Hii inaruhusu Composition API (locale.value)
+    globalInjection: true,    // Inaruhusu $t() kutumika moja kwa moja kwenye templates
+    locale: savedLang,        // Lugha ya kuanzia
+    fallbackLocale: 'en',     // Lugha ya akiba kama tafsiri haipo
+    messages: {
+        sw,
+        en
+    },
 });
+
+export default i18n;
